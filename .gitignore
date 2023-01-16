@@ -1,0 +1,9 @@
+node_modules
+config/dev.env
+.idea
+tests
+arsadb/
+azurite/
+storage
+catatan.txt
+captcha.txt
