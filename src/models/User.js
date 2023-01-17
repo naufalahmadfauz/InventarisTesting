@@ -32,24 +32,11 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
-    biodata:{
-        type:String,
-        required:false,
-        trim:true,
-        default:'Hi!',
-    },
     role:{
         type:Number,
         required:true,
         default:'1',
     },
-    tglLahir:{
-      type:Date,
-      required:true,
-    },
-    avatar:{
-        type:Buffer,
-    }
 },{
     timestamps:true
 })

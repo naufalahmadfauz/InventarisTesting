@@ -1,6 +1,6 @@
 const express = require("express");
 const router = new express.Router()
-const Mail = require('../models/Mailing')
+const Mail = require('../models/Barang')
 const fetch = require('node-fetch')
 const sendmail = require('../email/account')
 let dayjs = require('dayjs')
