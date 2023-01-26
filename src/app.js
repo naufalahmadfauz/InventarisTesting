@@ -1,6 +1,8 @@
 require('./db/mongoose')
 const express = require('express')
 const userRouter = require('./routers/user')
+const barangRouter = require('./routers/barang')
+const transaksiRouter = require('./routers/transaksi')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')
@@ -40,6 +42,8 @@ app.use(flash())
 prefill_user.prefill_user()
 
 app.use(userRouter)
+app.use(barangRouter)
+app.use(transaksiRouter)
 
 module.exports = app
 
