@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const barangSchema = new mongoose.Schema({
-    nama_barang:{
+    judul_barang:{
         type:String,
         lowercase:false,
         required:true,
@@ -12,11 +12,11 @@ const barangSchema = new mongoose.Schema({
         type:Number,
         trim: true,
         required:true,
-    }
+    },
 },{
     timestamps:true
 })
 
-const Barang = mongoose.model('Barang',mailSchema)
+const Barang = mongoose.model('Barang',barangSchema)
 
 module.exports = Barang

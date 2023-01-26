@@ -2,21 +2,29 @@ const mongoose = require('mongoose')
 
 const transaksiSchema = new mongoose.Schema({
     nama_peminjam:{
-        type:String,
-        lowercase:false,
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
-        unique:true,
-        trim:true,
+        ref:'User'
+    },
+    nama_barang:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'Barang'
     },
     jumlah_barang:{
         type:Number,
         trim: true,
         required:true,
+    },
+    status_pinjaman: {
+        type:String,
+        required:true,
+        default:'Dipinjam'
     }
 },{
     timestamps:true
 })
 
-const Barang = mongoose.model('Barang',mailSchema)
+const Transaksi = mongoose.model('Transaksi',transaksiSchema)
 
-module.exports = Barang
+module.exports = Transaksi

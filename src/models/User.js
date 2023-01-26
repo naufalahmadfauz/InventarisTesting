@@ -33,9 +33,9 @@ const userSchema = new mongoose.Schema({
         }
     },
     role:{
-        type:Number,
+        type:String,
         required:true,
-        default:'1',
+        default:'Siswa',
     },
 },{
     timestamps:true

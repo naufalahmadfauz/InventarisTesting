@@ -1,11 +1,10 @@
 require('./db/mongoose')
 const express = require('express')
 const userRouter = require('./routers/user')
-const homeRouter = require('./routers/home')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')
-
+const prefill_user = require('./functions/prefill_user')
 const hbs = require('hbs')
 const path = require("path");
 
@@ -37,7 +36,9 @@ app.use(session({
     })
 }));
 app.use(flash())
-app.use(homeRouter)
+
+prefill_user.prefill_user()
+
 app.use(userRouter)
 
 module.exports = app
