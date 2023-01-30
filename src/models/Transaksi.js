@@ -25,6 +25,7 @@ const transaksiSchema = new mongoose.Schema({
     timestamps:true
 })
 
+
 const Transaksi = mongoose.model('Transaksi',transaksiSchema)
 
 module.exports = Transaksi

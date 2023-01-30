@@ -2,6 +2,7 @@ const express = require('express')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const Barang = require('../models/Barang')
+const Transaksi = require('../models/Transaksi')
 
 router.post('/barang/baru',auth, async (req, res) => {
     const barang = new Barang(req.body)
@@ -52,9 +53,11 @@ router.delete('/barang/hapus/:id', auth, async (req, res) => {
         return res.status(401).send({error: 'You do not have permission to delete barang'})
     }
     try {
+        const transaksi = await Transaksi.find({})
         const barang = await Barang.findById({_id: req.params.id})
+        // await transaksi.remove()
         await barang.remove()
-        res.send(barang)
+        res.send()
     } catch (e) {
         res.status(500).send(e)
     }

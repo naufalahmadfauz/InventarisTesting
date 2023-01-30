@@ -1,0 +1,35 @@
+<div class="navbar-bg"></div>
+<nav class="navbar navbar-expand-lg main-navbar">
+    <form class="form-inline mr-auto">
+        <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                    class="fas fa-search"></i></a></li>
+        </ul>
+
+    </form>
+    <ul class="navbar-nav navbar-right">
+    </ul>
+</nav>
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <a href="/users/me">Arsamuda Inventaris</a>
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a href="/users/me">AI</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-header">Menu</li>
+
+            <li><a class="nav-link" href="/users/me"><i class="fas fa-user"></i> <span>Profil User</span></a></li>
+            <li><a class="nav-link" href="/users"><i class="fas fa-users"></i> <span>Daftar User</span></a></li>
+            <li><a class="nav-link" href="/barang"><i class="fas fa-box"></i> <span>Daftar Barang</span></a></li>
+            <li><a class="nav-link" href="/transaksi"><i class="fas fa-scroll"></i> <span>Daftar Transaksi</span></a>
+                <form method="post" action="/users/logout">
+            <a class="nav-link"><button class="btn btn-danger" type="submit">Logout</button></a>
+                </form>
+            </li>
+        </ul>
+    </aside>
+</div>

@@ -33,15 +33,17 @@ router.post('/transaksi/baru/:idBarang',auth, async (req, res) => {
     }
 })
 router.get('/transaksi', auth, async (req, res) => {
-    if (req.user.role==='Petugas'){
-        let transaksi = await Transaksi.find({}).populate({path:'nama_peminjam'}).populate({path:'nama_barang'})
-        console.log(transaksi)
-    }else{
-        let transaksi = await Transaksi.find({nama_peminjam:req.user.id}).populate({path:'nama_peminjam'}).populate({path:'nama_barang'})
-        console.log(transaksi)
+    try {
+        if (req.user.role==='Petugas'){
+            let transaksi = await Transaksi.find({}).populate({path:'nama_peminjam'}).populate({path:'nama_barang'})
+            res.send(transaksi)
+        }else{
+            let transaksi = await Transaksi.find({nama_peminjam:req.user.id}).populate({path:'nama_peminjam'}).populate({path:'nama_barang'})
+            res.send(transaksi)
+        }
+    }catch (e) {
+        res.status(500).send()
     }
-
-    res.send()
 })
 
 router.patch('/transaksi/selesai/:idTransaksi', auth, async (req, res) => {
@@ -71,7 +73,7 @@ router.delete('/transaksi/hapus/:id', auth, async (req, res) => {
         barang.jumlah_barang += transaksi.jumlah_barang
         await transaksi.remove()
         await barang.save()
-        res.send(transaksi)
+        res.send()
     } catch (e) {
         res.status(500).send(e)
     }

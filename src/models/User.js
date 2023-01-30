@@ -2,6 +2,8 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken')
+const Transaksi = require("./Transaksi");
+const Barang = require("./Barang");
 
 const userSchema = new mongoose.Schema({
     nama:{
@@ -39,6 +41,13 @@ const userSchema = new mongoose.Schema({
     },
 },{
     timestamps:true
+})
+
+
+userSchema.virtual('daftar_transaksi',{
+    ref:'Transaksi',
+    localField:'_id',
+    foreignField:'nama_peminjam'
 })
 
 
@@ -89,6 +98,13 @@ userSchema.pre('save',async function (next){
     }
     next()
 })
+
+userSchema.pre('remove', async function (next) {
+    const user = this
+    await Transaksi.deleteMany({ nama_peminjam: user._id })
+    next()
+})
+
 const User = mongoose.model('User',userSchema)
 
 module.exports = User

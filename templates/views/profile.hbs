@@ -1,0 +1,59 @@
+{{>header}}
+<body>
+<div id="app">
+    <div class="main-wrapper">
+        {{>navbar}}
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-header">
+                    <h1>Profile User</h1>
+                </div>
+                <div class="section-body">
+                    <div class="section-body">
+                        <div class="row mt-sm-4">
+                            <div class="col-12 col-md-12 col-lg-5">
+                                <div class="card profile-widget">
+                                    <div class="profile-widget-header">
+                                        <img alt="image" src="../assets/img/avatar/avatar-1.png"
+                                             class="rounded-circle profile-widget-picture">
+                                        <div class="profile-widget-items">
+                                            <div class="profile-widget-item">
+                                                <div class="profile-widget-item-label">Nama</div>
+                                                <div class="profile-widget-item-value">{{nama}}</div>
+                                            </div>
+                                            <div class="profile-widget-item">
+                                                <div class="profile-widget-item-label">Email</div>
+                                                <div class="profile-widget-item-value">{{email}}</div>
+                                            </div>
+                                            <div class="profile-widget-item">
+                                                <div class="profile-widget-item-label">Role</div>
+                                                <div class="profile-widget-item-value">{{role}}</div>
+                                            </div>
+
+                                            <div class="profile-widget-item">
+                                                <a href="/users/edit/me" class="btn btn-warning">Edit Profile</a>
+                                            </div>
+
+                                            <div class="profile-widget-item">
+                                                <form method="post" action="/users/me">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger">Delete Profil</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            Footer
+        </footer>
+    </div>
+</div>
+{{>footer}}
+</body>

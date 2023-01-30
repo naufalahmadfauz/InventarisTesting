@@ -6,13 +6,15 @@ const auth = async (req, res, next) => {
 
         if (!user) {
             await req.session.destroy()
-            return res.status(403).send({error: 'Please Login First.'})
+            return res.redirect('/login')
+            // return res.status(403).send({error: 'Please Login First.'})
         } else {
             req.user = user
             next()
         }
     } catch (e) {
-        return res.status(401).send({error: 'Please Authenticate'})
+        return res.redirect('/login')
+        // return res.status(401).send({error: 'Please Authenticate'})
     }
 }
 

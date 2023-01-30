@@ -1,4 +1,5 @@
-FROM node:19
+FROM node
+RUN npm install -g npm
 RUN npm install -g nodemon
 WORKDIR /inventaristesting
 COPY package.json .

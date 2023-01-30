@@ -1,0 +1,52 @@
+{{>header}}
+{{>navbar}}
+<body>
+<div id="app">
+    <div class="main-wrapper">
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-header">
+                    <h1>Edit User</h1>
+                </div>
+                <div class="section-body">
+                    <form method="post" action="/users/edit/me">
+                        <input type="hidden" name="_method" value="PATCH">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nama">Nama User</label>
+                                <input value="{{user.nama}}" name="nama" id="nama" type="text" class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email User</label>
+                                <input name="email" value="{{user.email}}" id="email" type="email" class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input name="password" id="password" type="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <select name="role" id="role" class="form-control">
+                                    <option value="Petugas">Petugas</option>
+                                    <option value="Siswa">Siswa</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            Footer
+        </footer>
+    </div>
+</div>
+</body>
+{{>footer}}

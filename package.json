@@ -1,6 +1,6 @@
 {
   "name": "inventaristesting",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Tugas testing inventaris",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "dependencies": {
     "@azure/storage-blob": "^12.10.0",
     "bcrypt": "^5.0.1",
+    "bootstrap-social": "^5.1.1",
     "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.6.0",
@@ -20,6 +21,7 @@
     "express": "^4.18.1",
     "express-session": "^1.17.2",
     "hbs": "^4.1.2",
+    "method-override": "^3.0.0",
     "izitoast": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
@@ -28,6 +30,7 @@
     "nodemailer": "^6.7.2",
     "randomstring": "^1.2.2",
     "sharp": "^0.30.6",
+    "bootstrap-social": "^5.1.1",
     "validator": "^13.7.0"
   },
   "devDependencies": {
