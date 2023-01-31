@@ -11,16 +11,18 @@
                 </div>
                 <div class="section-body">
                     <form method="post" action="/users/edit/me">
-                    <input type="hidden" name="_method" value="PATCH">
+                        <input type="hidden" name="_method" value="PATCH">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="nama">Nama User</label>
-                                <input value="{{user.nama}}" name="nama" id="nama" type="text" class="form-control" required>
+                                <input value="{{user.nama}}" name="nama" id="nama" type="text" class="form-control"
+                                       required>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email User</label>
-                                <input name="email" value="{{user.email}}" id="email" type="email" class="form-control" required>
+                                <input name="email" value="{{user.email}}" id="email" type="email" class="form-control"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
